@@ -22,7 +22,6 @@
 
         h2 {
             font-weight: 400;
-            text-shadow: 0px 1px 5px #1b1b1b;
         }
 
         &_effect {
@@ -55,7 +54,7 @@
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: -1px;
+                bottom: -2px;
                 height: 100%;
                 width: 100%;
                 border-bottom: 3px solid $componente;
@@ -94,10 +93,10 @@
         border-radius: 5px;
         padding: 5px 10px;
         margin-top: 15px;
-        box-shadow: 0px 1px 5px #1b1b1b;
     }
 
     button:hover {
+        box-shadow: 0px 1px 5px #1b1b1b;
         scale: 115%;
         transition: 0.5s;
     }
