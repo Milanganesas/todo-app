@@ -1,0 +1,127 @@
+@import '../Variables/variables';
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 5px;
+
+    h1 {
+        color: white;
+        letter-spacing: 1px;
+        text-shadow: 0px 1px 5px #1b1b1b;
+    }
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 70px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: $fondo;
+        gap: 15px;
+
+        button {
+            font-size: large;
+            font-weight: 500;
+            border: none;
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+
+        &_toDo {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: $componente;
+            box-shadow: 0px 1px 5px #1b1b1b;
+        }
+    }
+
+    &_select {
+        padding: 10px;
+        margin-bottom: 70px;
+        border: 1px solid;
+        border-radius: 20px;
+
+        &_none {
+            min-width: 280px;
+        }
+    }
+
+    @include breakpoint(md) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        h1 {
+            margin: 0;
+        }
+        
+        &_list {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 10px;
+            width: 30%;
+            height: 65vh;
+            gap: 10px;
+            overflow: hidden;
+            overflow-y: scroll;
+            
+            p {
+                padding: 0 10px;
+                font-weight: 400;
+            }
+            
+            button {
+                font-size: large;
+                border: none;
+                background-color: transparent;
+                margin: 0;
+                padding: 0 10px;
+            }
+
+            &_toDo {
+                display: flex;
+                justify-content: space-between;
+                padding: 5px;
+                margin: 0;
+            }
+        }
+
+        &_select {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid;
+            width: 60%;
+            height: 65vh;
+        }
+    };
+}
+
+.pointer {
+    cursor: pointer;
+
+    @include breakpoint(md) {
+        &:hover {
+            scale: 105%;
+            transition: 0.5s;
+        }
+    }
+}
+
+.delete {
+    cursor: pointer;
+
+    @include breakpoint(md) {
+        &:hover {
+            scale: 130%;
+            transition: 0.5s;
+        }
+    }
+}

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
 
-import Nav from './components/Nav/Nav';
-import Home from "./components/Home/Home";
-import Agregar from "./components/Agregar/Agregar"
-import Footer from './components/Footer/Footer';
+import Nav from "./components/Nav"
+import Home from "./components/Home"
+import Agregar from "./components/Agregar"
+import Footer from "./components/Footer"
 
 function App() {
 

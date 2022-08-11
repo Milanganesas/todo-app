@@ -1,0 +1,115 @@
+@import '../Variables/variables';
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    letter-spacing: 1px;
+    width: 80%;
+
+    &_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 35px;
+        border-radius: 10px;
+        background-color: $fondo;
+        box-shadow: 0px 1px 6px #000000;
+        width: 100%;
+
+        h2 {
+            font-weight: 400;
+            text-shadow: 0px 1px 5px #1b1b1b;
+        }
+
+        &_effect {
+            width: 100%;
+            position: relative;
+            height: 50px;
+            overflow: hidden;
+
+            input {
+                width: 100%;
+                height: 50%;
+                padding-top: 25px;
+                border: none;
+                background-color: transparent;
+                font-size: 15px;
+                outline: none;
+            }
+
+            &_label {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                border-bottom: 1px solid black;
+            }
+
+            &_label::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                height: 100%;
+                width: 100%;
+                border-bottom: 3px solid $componente;
+                transform: translate(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            &_content {
+                position: absolute;
+                bottom: 5px;
+                left: 0px;
+                transition: all 0.3s ease;
+            }
+
+            input:focus + &_label &_content, 
+            input:valid + &_label &_content{
+                transform: translateY(-110%);
+                font-size: 15px;
+                color: $componente;
+            }
+
+            input:focus + &_label::after, 
+            input:valid + &_label::after {
+                transform: translateX(0%);
+            }
+
+        }
+    }
+
+    button {
+        font-size: large;
+        background-color: $componente;
+        color: black;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-top: 15px;
+        box-shadow: 0px 1px 5px #1b1b1b;
+    }
+
+    button:hover {
+        scale: 115%;
+        transition: 0.5s;
+    }
+
+    @include breakpoint(md) {
+        width: 100%;
+
+        label {
+            font-weight: 300;
+            font-size: x-large;
+        }
+        
+    }
+}
+
