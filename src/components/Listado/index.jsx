@@ -7,12 +7,12 @@ const Listado = ({tareas, setTareas}) => {
 
     const [ seleccion, setSeleccion ] = useState();
 
-    const filter = (e) => {
-        setSeleccion(tareas.filter( t => t.titulo === e.target.innerText))
+    const filtrado = (e) => {
+        setSeleccion(tareas.filter(t => t.titulo === e.target.innerText));
     };
 
     const hDelete = (e) => {
-        setTareas(tareas.filter(t => t.fecha_creacion !== e.target.parentElement.id))
+        setTareas(tareas.filter(t => t.fecha_creacion !== e.target.parentElement.id));
     };
 
     return (
@@ -23,7 +23,7 @@ const Listado = ({tareas, setTareas}) => {
                     return (
                         <div className={styles.container_list_toDo} key={t.fecha_creacion} id={t.fecha_creacion}>
                                 <div>
-                                    <button className={styles.pointer} onClick={filter}>{t.titulo}</button>
+                                    <button className={styles.pointer} onClick={filtrado}>{t.titulo}</button>
                                     <p>{t.fecha_creacion}</p>
                                 </div>
                             <button className={styles.delete} onClick={hDelete}>{<AiOutlineDelete size="25px"/>}</button>
