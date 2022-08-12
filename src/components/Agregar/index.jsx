@@ -1,6 +1,21 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import styles from './index.module.scss'
 
 const Agregar = ({tareas, setTareas}) => {
+
+    const notify = (str) => {
+        toast.success(str, {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            });
+    };
 
     const fecha = new Date();
 
@@ -20,13 +35,13 @@ const Agregar = ({tareas, setTareas}) => {
             setTareas([...tareas, tarea]);
             e.target.titulo.value = "";
             e.target.descripcion.value = "";
-            alert("Listo master, quedo cargada!");
+            notify("Listo, quedo cargada!");
         }
 
         !titulo ? 
-        alert("Te falta el titulo champion!") :
+        notify("Necesita titulo") :
         !descripcion ? 
-        alert("Describila un poquito") :
+        notify("Necesita descripcion") :
         crear()
         
     };
@@ -49,6 +64,7 @@ const Agregar = ({tareas, setTareas}) => {
                     </div>
                     <div>
                         <button type="submit">Enviar</button>
+                        <ToastContainer />
                     </div>
                 </form>
             </div>
