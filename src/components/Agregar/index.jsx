@@ -36,7 +36,7 @@ const Agregar = ({tareas, setTareas}) => {
             e.target.titulo.value = "";
             e.target.descripcion.value = "";
             notify("Listo, quedo cargada!");
-        }
+        };
 
         !titulo ? 
         notify("Necesita titulo") :
