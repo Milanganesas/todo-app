@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
-
 import styles from './index.module.scss'
 
 const Nav = () => {
+
+    const localDelete = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
+    
     return (
         <header className={styles.container}> 
             <h1>To do APP</h1>
             <nav>
                 <ul>
-                    <li><Link to="/agregar"><button>AGREGAR TAREA</button></Link></li>
-                    <li><Link to="/"><button>LISTADO</button></Link></li>
+                    <li><button onClick={localDelete}>Borrar todo!</button></li>
                 </ul>
             </nav>
         </header>

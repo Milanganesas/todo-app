@@ -1,14 +1,13 @@
 @import '../Variables/variables';
 
 .container {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     color: white;
     letter-spacing: 1px;
-    width: 90%;
+    margin-bottom: 70px;
 
     &_form {
         display: flex;

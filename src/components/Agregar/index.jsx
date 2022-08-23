@@ -1,9 +1,12 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useTareas } from '../../Context/Tareas';
 
 import styles from './index.module.scss'
 
-const Agregar = ({tareas, setTareas}) => {
+const Agregar = () => {
+
+    const {tareas, setTareas} = useTareas();
 
     const notify = (str) => {
         toast.success(str, {
@@ -32,7 +35,9 @@ const Agregar = ({tareas, setTareas}) => {
         };
 
         const crear = () => {
-            setTareas([...tareas, tarea]);
+            const newTarea = [...tareas, tarea]
+            setTareas(newTarea);
+            localStorage.setItem("tareas", JSON.stringify(newTarea))
             e.target.titulo.value = "";
             e.target.descripcion.value = "";
             notify("Listo, quedo cargada!");
