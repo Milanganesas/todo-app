@@ -4,7 +4,7 @@ const Nav = () => {
 
     const localDelete = () => {
         localStorage.clear();
-        window.location.reload();
+        window.close();
     }
     
     return (
