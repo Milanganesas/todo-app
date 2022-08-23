@@ -23,7 +23,9 @@ const Listado = () => {
     };
 
     const hDelete = (e) => {
-        setTareas(tareas.filter(t => t.fecha_creacion !== e.target.parentElement.id));
+        const newTareas = tareas.filter(t => t.fecha_creacion !== e.target.parentElement.id);
+        setTareas(newTareas);
+        localStorage.setItem("tareas", JSON.stringify(newTareas));
     };
 
     return (  
